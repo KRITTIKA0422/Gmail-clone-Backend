@@ -10,9 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 app.use(express.json());
 const MONGO_URL = process.env.MONGO_URL;
-app.use(cors({
-    origin:"https://resplendent-douhua-bf7f72.netlify.app"
-}));
+app.use(cors());
 
 async function createConnection() {
     const client = new MongoClient(MONGO_URL);
